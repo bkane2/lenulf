@@ -152,11 +152,11 @@
 ;``````````````````````````````````
  ; if there are no (sub ...) constructs in tree (hence no gaps), return tree
  (let ()
-   (when *show-stages*
-       (format t "~%~%@@ Parse tree prior to gap-insertion:")
-       (format t   "~%   ``````````````````````````````````~%~s" tree)
-       (format t "~%~%@@ Insert missing *h wherever there are 'sub' constructs")
-       (format t "~%   `````````````````````````````````````````````````````"))
+  ;;  (when *show-stages*
+  ;;      (format t "~%~%@@ Parse tree prior to gap-insertion:")
+  ;;      (format t   "~%   ``````````````````````````````````~%~s" tree)
+  ;;      (format t "~%~%@@ Insert missing *h wherever there are 'sub' constructs")
+  ;;      (format t "~%   `````````````````````````````````````````````````````"))
    (if (not (contains-sub-construct tree))
        tree; to avoid unneccesary tree reconstruction
        (globally-insert-gaps1 tree))
@@ -280,8 +280,8 @@
                       (cons (third tree)
                        (cons (subst '(-SYMB- *h) cand tree4 :test 'equal)
                         (cddddr tree0)))))); just in case there's more in tree
-             (if *show-stages*
-               (format t "~%~%@@ (sub)tree with chosen *h-gap:~%~s" tree0))
+            ;;  (if *show-stages*
+            ;;    (format t "~%~%@@ (sub)tree with chosen *h-gap:~%~s" tree0))
              (return tree0))
 
        ; Add occurrence indices to gap candidates; we use start values
@@ -319,8 +319,8 @@
        (setq tree0 ; for output
          (append (list (car tree) (second tree) (third tree) tree4) 
                  (cddddr tree))); just in case there's a further element
-       (if *show-stages*
-           (format t "~%~%@@ (sub)tree with chosen *h-gap(s):~%~s~%" tree0))
+      ;;  (if *show-stages*
+      ;;      (format t "~%~%@@ (sub)tree with chosen *h-gap(s):~%~s~%" tree0))
        (return tree0)
  )); end of locally-insert-gaps
 
@@ -344,9 +344,9 @@
 ;       those are processed via 'globally-insert-gaps1'.
 ;
  (let ((whxp (car (third tree))) result)
-      (if *show-stages*
-         (format t 
-           "~%@@ (sub)tree of form (XP (-SYMB- sub) ... lacking gaps:~%~s" tree))
+      ;; (if *show-stages*
+      ;;    (format t 
+      ;;      "~%@@ (sub)tree of form (XP (-SYMB- sub) ... lacking gaps:~%~s" tree))
       (if (eq whxp 'SBAR); topicalized clause or clausal nominal, e.g.,
                          ; "What he writes, no-one knows"; "Where he lives,
                          ; there's no water"; "Where he lives, no-one knows"
@@ -372,9 +372,9 @@
                   ((eq whxp 'VP) ; VP gap expected?
                    (insert-vp-gap-candidates (fourth tree)))
             ))
-     (if *show-stages*
-         (format t "~%~%@@ (sub)tree with :XP gap candidates inserted:~%~s~%"
-            (list (car tree) (second tree) (third tree) result)))
+    ;;  (if *show-stages*
+    ;;      (format t "~%~%@@ (sub)tree with :XP gap candidates inserted:~%~s~%"
+    ;;         (list (car tree) (second tree) (third tree) result)))
      (list (car tree) (second tree) (third tree) result)
  )); end of insert-gap-candidates
 

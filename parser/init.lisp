@@ -32,21 +32,21 @@
 
 ; (load "test...pos+word-to-ulf.lisp")
 
-(setq *show-stages* t)
+(setq *show-stages* nil)
 
-(let ()
- (format t "~%Example of using 'parse-tree-to-ulf' (from Brown, file p16):~% ~
-             (parse-tree-to-ulf~%    ~
-                 '((S (NP (PRP I))~%         ~
-                      (AUX (VBP \\'m))~%         ~
-                      (VP (VBN scared)~%             ~
-                          (PP (IN of) (NP (DT the) (NN nightmare))))) (\\. \\.)))")
- (format t "~%~%Suggested handy definition:~%
-         (defun p (tree) (format t ~s (parse-tree-to-ulf tree)))" "~%~s")
- (format t "~%~%Suggested handy definition for English to ULF:~%
-         (defun ulf (str) (format t ~s (english-to-ulf str)))" "~%~s")
- (format t "~%~%To print an item x in full, define:~%
-         (defun show (x) (format t ~a~a~a x))" #\" "~s" #\")
- (format t "~%~%To avoid showing processing stages, do~%  ~
-           (setq *show-stages* nil)")
- '     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-)
+;; (let ()
+;;  (format t "~%Example of using 'parse-tree-to-ulf' (from Brown, file p16):~% ~
+;;              (parse-tree-to-ulf~%    ~
+;;                  '((S (NP (PRP I))~%         ~
+;;                       (AUX (VBP \\'m))~%         ~
+;;                       (VP (VBN scared)~%             ~
+;;                           (PP (IN of) (NP (DT the) (NN nightmare))))) (\\. \\.)))")
+;;  (format t "~%~%Suggested handy definition:~%
+;;          (defun p (tree) (format t ~s (parse-tree-to-ulf tree)))" "~%~s")
+;;  (format t "~%~%Suggested handy definition for English to ULF:~%
+;;          (defun ulf (str) (format t ~s (english-to-ulf str)))" "~%~s")
+;;  (format t "~%~%To print an item x in full, define:~%
+;;          (defun show (x) (format t ~a~a~a x))" #\" "~s" #\")
+;;  (format t "~%~%To avoid showing processing stages, do~%  ~
+;;            (setq *show-stages* nil)")
+;;  '     -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-)

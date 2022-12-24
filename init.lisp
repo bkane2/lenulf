@@ -38,7 +38,7 @@
 
 ; (load "test...pos+word-to-ulf.lisp")
 
-(setq *show-stages* t)
+(setq *show-stages* nil)
 
 (let ()
  (format t "~%Example of using 'parse-tree-to-ulf' (from Brown, file p16):~% ~

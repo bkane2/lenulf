@@ -35,15 +35,15 @@
           ; for uniform atomic initial list elements
           (setq tree1 (cons (caar tree1) tree1)))
 
-      (if *show-stages*
-        (format t "~%## Initial parse tree:    ~%~s~%" tree1))
+      ;; (if *show-stages*
+      ;;   (format t "~%## Initial parse tree:    ~%~s~%" tree1))
       (dolist (rule-name *preprocessing-rule-names*)
         (setq tree2 (apply-rule-top-down (eval rule-name) tree1))
-        (if *show-stages*
-          (if (equal tree2 tree1)
-              (format t "~%## Parse tree after ~s: No change" rule-name)
-              (format t "~%## Modified parse tree after ~s:    ~%~s" 
-                         rule-name tree2)))
+        ;; (if *show-stages*
+        ;;   (if (equal tree2 tree1)
+        ;;       (format t "~%## Parse tree after ~s: No change" rule-name)
+        ;;       (format t "~%## Modified parse tree after ~s:    ~%~s" 
+        ;;                  rule-name tree2)))
         (setq tree1 tree2))
       (globally-insert-gaps tree1)
  )); end of preprocess-tree-for-ulf

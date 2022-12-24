@@ -29,17 +29,17 @@
 ; in *postprocessing-rule-names* to ulf
 ;
   (let ((ulf1 (remove-extra-brackets ulf)) ulf2)
-        (when *show-stages*
-              (format t "~%~%## ULF before postprocessing:~%~s" ulf1)
-              (format t "~%~%## Apply ULF postprocessing rules:~%")
-              (format t  "   ```````````````````````````````"))
+      ;;   (when *show-stages*
+      ;;         (format t "~%~%## ULF before postprocessing:~%~s" ulf1)
+      ;;         (format t "~%~%## Apply ULF postprocessing rules:~%")
+      ;;         (format t  "   ```````````````````````````````"))
         (dolist (rule-name *postprocessing-rule-names*)
            (setq ulf2 (apply-rule-top-down (eval rule-name) ulf1))
-           (if *show-stages*
-             (if (equal ulf2 ulf1)
-                 (format t "~%## ULF after ~s: No change" rule-name)
-                 (format t "~%## Modified ULF after ~s:    ~%~s"
-                            rule-name ulf2)))
+      ;;      (if *show-stages*
+      ;;        (if (equal ulf2 ulf1)
+      ;;            (format t "~%## ULF after ~s: No change" rule-name)
+      ;;            (format t "~%## Modified ULF after ~s:    ~%~s"
+      ;;                       rule-name ulf2)))
            (setq ulf1 ulf2))
         ulf1 
  )); end of postprocess-ulf-tree

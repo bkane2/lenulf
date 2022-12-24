@@ -62,8 +62,8 @@
        ; which handles multi-sentence strings (with {. ! ?} punctuation)
       (if (unpunctuated-wh-question parse-tree)
           (setq parse-tree (parse (concatenate 'string str "?"))))
-      (if *show-stages*
-          (format t "~%~% Initial parse tree: ~%   ~s~%~%" parse-tree))
+    ;;   (if *show-stages*
+    ;;       (format t "~%~% Initial parse tree: ~%   ~s~%~%" parse-tree))
   ;   (setq parse-tree; omit tree repairs for now (rewrite in TT?)
   ;       (repeatedly-repair-parse-tree parse-tree)
       parse-tree
