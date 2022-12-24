@@ -6,6 +6,8 @@
 (defpackage :lenulf
   (:use :cl :cl-user)
   (:export :english-to-ulf
+           :english-to-parse-tree
+           :remove-token-indices
            :parse-tree-to-ulf))
 
 ;; This is to store the path to the source code

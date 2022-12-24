@@ -10,7 +10,8 @@
 ;; Example:
 ;; (parse "This is a test.")
 
-(defparameter *parser* "/p/nl/tools/bllip-parser/first-stage/PARSE/parseIt")
+;; (defparameter *parser* "/p/nl/tools/bllip-parser/first-stage/PARSE/parseIt")
+(defparameter *parser* "/Users/bkane2/quicklisp/local-projects/lenulf/bllip-parser/first-stage/PARSE/parseIt")
 ;                         ^^^^ changed back from krr (Jan 12); nl had been out of space
 
 ;; This is the traditional Charniak language model.
@@ -18,7 +19,8 @@
 ;;   /p/nl/tools/bllip-parser/first-stage/DATA/
 ;;      ^^ now krr, at least until nl is enlarged; but the reranking
 ;;         parser is still in nl
-(defparameter *pdata* "/p/nl/tools/reranking-parser/first-stage/DATA/EN/")
+;; (defparameter *pdata* "/p/nl/tools/reranking-parser/first-stage/DATA/EN/")
+(defparameter *pdata* "/Users/bkane2/quicklisp/local-projects/lenulf/reranking-parser/first-stage/DATA/EN/")
 
 ;; An association list from syntactic parser name to parser function call.
 (defparameter *syntactic-parser-fn-alist*

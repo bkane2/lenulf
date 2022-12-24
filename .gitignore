@@ -27,3 +27,12 @@ deps/
 # NFS filesystem
 .nfs*
 
+bllip-parser
+bllip-parser/*
+reranking-parser
+reranking-parser/*
+_MAC_*
+
+G*.txt
+
+test.lisp
